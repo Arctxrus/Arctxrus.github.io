@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects - Arctxrus</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Add specific styling for projects.html if needed, or put in style.css */
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .project-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 8px var(--shadow-color);
+        }
+        .project-card h3 {
+            color: var(--accent-color);
+            margin-top: 0;
+        }
+        .project-card p {
+            font-size: 0.95em;
+        }
+        .project-card .btn {
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <header style="text-align: center; padding: 20px; background-color: var(--card-bg); border-bottom: 1px solid var(--border-color);">
+        <h1 style="margin: 0;"><a href="index.html" style="color: var(--text-color); text-decoration: none;">Arctxrus's Projects</a></h1>
+        <p style="margin-top: 10px; color: var(--secondary-text-color);">A showcase of my work in development and design.</p>
+    </header>
+
+    <main class="projects-container">
+        <div class="project-card">
+            <h3>Roblox Aniverse Framework</h3>
+            <p>A comprehensive game framework focusing on advanced networking (bitpacking), rendering (frustum culling), and smooth path generation (splines). Built with Luau in Roblox Studio.</p>
+            <p><strong>Key Skills:</strong> Luau, Game Architecture, Network Optimization, Performance, UI Design.</p>
+            <a href="https://github.com/Arctxrus/Roblox-Aniverse-Framework" target="_blank" class="btn btn-primary"><i class="fab fa-github"></i> View Code</a>
+            </div>
+
+        <div class="project-card">
+            <h3>Simple anti gravity framework</h3>
+            <p>Script that utilises raycasts and trigonometry to dynamically adjust direction of gravity to the surface below!</p>
+            <p><strong>Key Skills:</strong> Lua</p>
+            <a href="[Coming soon]" target="_blank" class="btn btn-secondary">Learn More</a>
+        </div>
+    </main>
+
+    <footer style="text-align: center; padding: 20px; color: var(--secondary-text-color); margin-top: 40px;">
+        <p>&copy; 2025 Arctxrus. All rights reserved.</p>
+    </footer>
+</body>
+</html>

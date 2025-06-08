@@ -1,0 +1,310 @@
+/* Variables for easy customization */
+:root {
+    --bg-color: #1a1a2e; /* Dark background */
+    --card-bg: #2a2a4a; /* Card background */
+    --text-color: #e0e0e0; /* Light text */
+    --secondary-text-color: #b0b0b0; /* Slightly dimmer text */
+    --accent-color: #8a2be2; /* Violet/Purple accent */
+    --accent-light: #9b5be9; /* Lighter accent for hover */
+    --border-color: #3e3e6b; /* Card border */
+    --shadow-color: rgba(0, 0, 0, 0.3); /* Card shadow */
+}
+
+body {
+    font-family: 'Inter', sans-serif; /* Using Inter, but falls back to generic sans-serif */
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align cards to the top */
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three columns */
+    gap: 20px;
+    max-width: 1200px; /* Max width for the entire layout */
+    width: 100%;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    padding: 25px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 8px 16px var(--shadow-color);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Specific Card Layouts */
+.profile-card {
+    grid-column: 1 / 2; /* Spans 1st column */
+    grid-row: 1 / 2; /* Stays in 1st row */
+}
+
+.services-card {
+    grid-column: 1 / 2; /* Spans 1st column */
+    grid-row: 2 / 3; /* Below profile card */
+}
+
+.projects-summary-card {
+    grid-column: 1 / 2; /* Spans 1st column */
+    grid-row: 3 / 4; /* Below services card */
+}
+
+.skills-card {
+    grid-column: 2 / 3; /* Spans 2nd column */
+    grid-row: 1 / 2; /* Top of 2nd column */
+}
+
+.stats-contact-card {
+    grid-column: 2 / 3; /* Spans 2nd column */
+    grid-row: 2 / 4; /* Stretches from 2nd to 3rd row in 2nd column */
+    justify-content: space-between; /* Push contact to bottom */
+}
+
+.work-process-card {
+    grid-column: 3 / 4; /* Spans 3rd column */
+    grid-row: 1 / 4; /* Stretches full height of 3rd column */
+}
+
+
+/* General Styling */
+h1, h2, h3 {
+    color: var(--text-color);
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+h2 .fas, h3 .fas { /* For icons next to headings */
+    margin-right: 10px;
+    color: var(--accent-color);
+}
+
+p {
+    line-height: 1.6;
+    color: var(--secondary-text-color);
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Profile Card Specifics */
+.profile-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.profile-pic {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 3px solid var(--accent-color);
+    margin-right: 15px;
+    object-fit: cover;
+}
+
+.profile-text .available-status {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 3px 8px;
+    border-radius: 5px;
+    font-size: 0.8em;
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.profile-details p {
+    margin-bottom: 8px;
+    font-size: 0.95em;
+}
+.profile-details .fas {
+    margin-right: 8px;
+    color: var(--accent-color);
+}
+
+.profile-actions {
+    margin-top: auto; /* Push buttons to bottom if card grows */
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    display: inline-flex; /* Use flex to align icon and text */
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.btn .fab {
+    margin-right: 8px;
+}
+
+.btn-primary {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-light);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--accent-color);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Skills and Services Grid */
+.skills-grid, .services-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill-item, .service-item {
+    background-color: var(--border-color);
+    color: var(--text-color);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9em;
+}
+
+/* Stats Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.stat-number {
+    font-size: 2.2em;
+    font-weight: 700;
+    color: var(--accent-color);
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 0.9em;
+    color: var(--secondary-text-color);
+}
+
+/* Work Process List */
+.process-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.process-list li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.process-step-number {
+    background-color: var(--accent-color);
+    color: white;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    min-width: 28px; /* Ensure it stays round */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 0.85em;
+    margin-right: 15px;
+    flex-shrink: 0; /* Prevent number from shrinking */
+}
+
+.process-step-title {
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 5px;
+    font-size: 1.1em;
+}
+
+.process-step-description {
+    font-size: 0.9em;
+    color: var(--secondary-text-color);
+    margin: 0;
+}
+
+/* Testimonials */
+.testimonials {
+    margin-top: 20px;
+}
+.testimonials p {
+    font-style: italic;
+    margin-bottom: 10px;
+    border-left: 3px solid var(--accent-color);
+    padding-left: 10px;
+}
+
+/* Projects Summary Card */
+.projects-summary-card p {
+    margin-bottom: 20px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 992px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr); /* Two columns on medium screens */
+    }
+    .work-process-card {
+        grid-column: 1 / 3; /* Spans both columns */
+        grid-row: auto; /* Allow auto placement */
+    }
+    .stats-contact-card {
+        grid-row: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr; /* Single column on small screens */
+    }
+    .profile-card, .services-card, .projects-summary-card,
+    .skills-card, .stats-contact-card, .work-process-card {
+        grid-column: 1 / 2; /* All span full width */
+        grid-row: auto; /* Auto placement */
+    }
+    body {
+        padding: 15px;
+    }
+    .card {
+        padding: 20px;
+    }
+}
