@@ -1,385 +1,135 @@
-/* Color Palette from Inspiration (sampled carefully) */
+/* --- GLOBAL STYLES & SETUP --- */
 :root {
-    --bg-color: #12121e;        /* Deep dark background */
-    --card-bg: #1c1c30;         /* Slightly lighter, vibrant card background */
-    --text-color: #e0e0e0;      /* Light text for readability */
-    --secondary-text-color: #a0a0b0; /* Dimmer text for descriptions */
-    --accent-color: #8a2be2;    /* The prominent violet/purple */
-    --accent-dark: #6a1bb2;     /* Darker accent for hover/active */
-    --border-color: #2c2c4d;    /* Subtle border for cards */
-    --shadow-color: rgba(0, 0, 0, 0.4); /* Deeper shadow */
-    --highlight-bg: #2b2b4a;    /* Background for skill/service items */
-    --light-purple-glow: rgba(138, 43, 226, 0.2); /* For subtle glow effects */
+    --bg-color: #0D0C10;
+    --card-color: #14131A;
+    --border-color: #22212A;
+    --text-primary: #f0f2f5;
+    --text-secondary: #a4a2b3;
+    --accent-primary: #9875E6; /* Paler Purple */
+    --accent-primary-hover: #815EC4; /* Darker shade for hover */
+    --accent-secondary: #1F1E26;
+    --accent-hover: #2A2834;
+    --star-color: #e8d53a;
+    --font-family: "Roboto Mono", monospace;
 }
 
 body {
-    font-family: 'Inter', sans-serif;
     background-color: var(--bg-color);
-    color: var(--text-color);
+    color: var(--text-primary);
+    font-family: var(--font-family);
     margin: 0;
-    padding: 30px; /* More padding around the edges */
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    min-height: 100vh;
-    box-sizing: border-box;
-    font-size: 16px; /* Base font size */
+    padding: 2rem;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 400; 
 }
 
-.container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Three columns */
-    gap: 25px; /* Larger gap between cards */
-    max-width: 1280px; /* Slightly wider max-width */
-    width: 100%;
-}
+p { color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6; }
+a { text-decoration: none; color: inherit; }
+h1, h3 { font-weight: 600; }
 
-.card {
-    background-color: var(--card-bg);
-    border-radius: 12px;
-    padding: 25px; /* Consistent padding */
-    border: 1px solid var(--border-color);
-    box-shadow: 0 5px 15px var(--shadow-color);
+/* --- 3-COLUMN MAIN LAYOUT --- */
+.main-container { display: grid; grid-template-columns: 360px 1fr 1fr; gap: 2rem; max-width: 1600px; margin: 0 auto; align-items: start; }
+.left-column, .middle-column, .right-column { display: flex; flex-direction: column; gap: 2rem; min-width: 0; }
+
+/* --- CARD STYLING & HOVER EFFECT --- */
+.card { background-color: var(--card-color); border: 1px solid var(--border-color); border-radius: 16px; padding: 1.5rem; transition: transform 0.3s ease, border-color 0.3s ease; }
+.card:hover { transform: translateY(-5px); border-color: var(--accent-primary); }
+.card h3 { margin: 0 0 0.5rem 0; font-size: 1.25rem; display: flex; align-items: center; gap: 0.75rem; }
+
+/* --- LEFT COLUMN COMPONENTS --- */
+.profile-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+.avatar { width: 60px; height: 60px; border-radius: 50%; }
+.profile-title h3 { margin-bottom: 0.25rem; gap: 0; }
+.profile-title p { margin: 0; font-size: 0.9rem; }
+.status-tag { background-color: rgba(63, 252, 142, 0.1); color: #3ffc8e; padding: 0.25rem 0.75rem; border-radius: 8px; font-weight: 500; font-size: 0.8rem; display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem; }
+.status-tag .fa-circle { font-size: 0.5rem; }
+.info-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.info-tags span { background-color: var(--accent-secondary); padding: 0.5rem 0.75rem; border-radius: 8px; font-size: 0.85rem; transition: background-color 0.3s ease; }
+.info-tags span:hover { background-color: var(--accent-hover); }
+.profile-buttons { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem; }
+
+/* --- GRADIENT & BUTTONS --- */
+@keyframes animate-gradient { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+.btn { padding: 0.6rem 1rem; border: 1px solid transparent; border-radius: 8px; font-weight: 600; font-size: 0.9rem; text-align: center; text-decoration: none; transition: all 0.2s ease; display: inline-flex; justify-content: center; align-items: center; gap: 0.5rem; font-family: var(--font-family); }
+.btn-primary { color: white; background: linear-gradient(90deg, var(--accent-primary-hover), var(--accent-primary), var(--accent-primary-hover), var(--accent-primary)); background-size: 300% 100%; animation: animate-gradient 8s ease-in-out infinite; }
+.btn-primary:hover { transform: scale(1.05); }
+.btn-secondary { background-color: var(--accent-secondary); color: var(--text-primary); border-color: var(--border-color); }
+.btn-secondary:hover { background-color: var(--accent-hover); border-color: #4a485b; }
+.full-width { display: flex; width: 100%; box-sizing: border-box; margin-top: 1rem; }
+
+/* --- MIDDLE & RIGHT COLUMN COMPONENTS --- */
+.tech-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem; }
+.tech-item { background-color: var(--accent-secondary); padding: 1rem; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; font-weight: 500; transition: background-color 0.3s ease; }
+.tech-item:hover { background-color: var(--accent-hover); }
+.stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+
+/* UPDATED: Stat card centering */
+.stat-card {
     display: flex;
     flex-direction: column;
-    box-sizing: border-box; /* Include padding and border in element's total width and height */
-    overflow: hidden; /* For rounded corners not cutting off content */
-}
-
-/* Grid Area Assignments (adjusted because skills card is removed) */
-/* Columns:
-   1: Profile, Services, Projects Summary
-   2: Stats, (empty space left by skills removal if not filled by stats-contact)
-   3: Work Process, Testimonials
-*/
-.profile-card {
-    grid-column: 1 / 2;
-    grid-row: 1 / 2;
-}
-
-.services-card {
-    grid-column: 1 / 2;
-    grid-row: 2 / 3;
-}
-
-.projects-summary-card {
-    grid-column: 1 / 2;
-    grid-row: 3 / 4;
-}
-
-/* Stats card will now fill the remaining vertical space in the middle column */
-.stats-contact-card {
-    grid-column: 2 / 3;
-    grid-row: 1 / 4; /* Spans all rows in the 2nd column */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Pushes content apart, pushing stats to top, contact to bottom if present */
-}
-
-.work-process-card {
-    grid-column: 3 / 4;
-    grid-row: 1 / 4; /* Spans all rows in the 3rd column */
-}
-
-/* General Text Styling */
-h1, h2, h3 {
-    color: var(--text-color);
-    margin-top: 0;
-    margin-bottom: 15px;
-    font-weight: 600;
-}
-
-h2 .fas, h3 .fas {
-    margin-right: 10px;
-    color: var(--accent-color);
-}
-
-p {
-    line-height: 1.6;
-    color: var(--secondary-text-color);
-    font-size: 0.95em;
-    margin-bottom: 10px;
-}
-
-a {
-    color: var(--accent-color);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-a:hover {
-    color: var(--accent-light);
-}
-
-/* Profile Card Specifics */
-.profile-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.profile-pic {
-    width: 90px; /* Slightly larger */
-    height: 90px;
-    border-radius: 50%;
-    border: 3px solid var(--accent-color); /* Matches original */
-    margin-right: 20px;
-    object-fit: cover;
-    box-shadow: 0 0 15px var(--light-purple-glow); /* Subtle glow */
-}
-
-.profile-text .available-status {
-    background: linear-gradient(45deg, #a050d0, #8a2be2); /* Gradient from inspiration */
-    color: white;
-    padding: 4px 10px;
-    border-radius: 5px;
-    font-size: 0.75em; /* Slightly smaller */
-    display: inline-block;
-    margin-bottom: 8px; /* More space */
-    font-weight: 500;
-}
-
-.profile-text h2 {
-    font-size: 1.8em; /* Larger name */
-    margin-bottom: 5px;
-}
-
-.profile-text .role {
-    font-size: 1em; /* Role text size */
-    color: var(--secondary-text-color);
-}
-
-.profile-details p {
-    margin-bottom: 8px;
-    font-size: 0.95em;
-    color: var(--text-color); /* Make details text lighter */
-}
-.profile-details .fas {
-    margin-right: 10px;
-    color: var(--accent-color);
-    font-size: 1.1em; /* Slightly larger icon */
-}
-
-.profile-actions {
-    margin-top: 20px; /* Space above buttons */
-    display: flex;
-    gap: 15px; /* More space between buttons */
-}
-
-.btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 12px 25px; /* Larger padding */
-    border-radius: 8px; /* More rounded */
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease; /* Smoother transition */
-    border: none;
-    cursor: pointer;
-    font-size: 1em;
-}
-
-.btn .fab, .btn .fas { /* For icons within buttons */
-    margin-right: 10px;
-}
-
-.btn-primary {
-    background: linear-gradient(90deg, #8a2be2, #a050d0); /* Gradient matching inspiration */
-    color: white;
-    box-shadow: 0 4px 10px rgba(138, 43, 226, 0.4); /* Glow on button */
-}
-
-.btn-primary:hover {
-    background: linear-gradient(90deg, #a050d0, #8a2be2); /* Reverse gradient on hover */
-    transform: translateY(-3px); /* Lift effect */
-    box-shadow: 0 6px 15px rgba(138, 43, 226, 0.6);
-}
-
-.btn-secondary {
-    background-color: var(--highlight-bg); /* Use highlight bg for secondary */
-    color: var(--accent-color);
-    border: 1px solid var(--accent-color);
-}
-
-.btn-secondary:hover {
-    background-color: var(--accent-color);
-    color: white;
-    transform: translateY(-3px);
-}
-
-/* Skills and Services Grid Items */
-.skills-grid, .services-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px; /* Spacing between tags */
-}
-
-.skill-item, .service-item {
-    background-color: var(--highlight-bg); /* Use highlight bg for tags */
-    color: var(--text-color);
-    padding: 8px 18px; /* More padding */
-    border-radius: 20px; /* More rounded */
-    font-size: 0.9em;
-    font-weight: 500;
-    transition: background-color 0.3s ease;
-}
-
-.skill-item:hover, .service-item:hover {
-    background-color: var(--border-color); /* Slight change on hover */
-}
-
-/* Stats Grid */
-.stats-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-    text-align: center;
-    margin-bottom: 25px; /* Space below stats */
-    padding-bottom: 25px; /* Padding for border */
-    border-bottom: 1px solid var(--border-color);
-}
-
-.stat-item {
-    padding: 10px 0;
-}
-
-.stat-number {
-    font-size: 2.5em; /* Larger numbers */
-    font-weight: 700;
-    color: var(--accent-color);
-    margin-bottom: 5px;
-}
-
-.stat-label {
-    font-size: 0.9em;
-    color: var(--secondary-text-color);
-    font-weight: 500;
-}
-
-/* Work Process List */
-.process-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    position: relative; /* For connecting lines */
-}
-
-.process-list li {
-    display: flex;
-    flex-direction: column; /* Stack header and description */
-    margin-bottom: 25px; /* Space between steps */
-    position: relative;
-    padding-left: 45px; /* Space for number and line */
-}
-
-.process-list li:last-child {
-    margin-bottom: 0; /* No margin on last item */
-}
-
-.process-step-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 8px; /* Space between header and description */
-}
-
-.process-step-number {
-    background-color: var(--accent-color);
-    color: white;
-    border-radius: 50%;
-    width: 30px; /* Larger circle */
-    height: 30px;
-    min-width: 30px;
-    display: flex;
     justify-content: center;
     align-items: center;
-    font-weight: 700;
-    font-size: 0.9em;
-    position: absolute;
-    left: 0;
-    top: 0; /* Align with top of step content */
-    z-index: 1; /* Ensure it's above the line */
 }
+.stat-card h3 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 0.25rem;
+    /* UPDATED: Gradient direction reversed */
+    background: linear-gradient(to bottom, var(--accent-primary) 10%, white 90%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+.stat-card p { margin: 0; font-size: 0.8rem; }
+.work-steps { list-style: none; padding: 0; margin-top: 1.5rem; }
+.work-steps li { display: flex; gap: 1rem; align-items: flex-start; padding: 0.75rem 0; border-bottom: 1px solid var(--border-color); }
+.work-steps li:last-child { border-bottom: none; }
+.work-steps span { background-color: var(--accent-secondary); color: var(--accent-primary); font-weight: 700; height: 30px; width: 30px; min-width: 30px; border-radius: 8px; display: grid; place-items: center; }
+.work-steps h4 { margin: 0 0 0.25rem; font-size: 1rem; color: var(--text-primary); font-weight: 600; }
+.work-steps p { margin: 0; font-size: 0.85rem;}
+.stars { color: var(--star-color); display: flex; gap: 0.25rem; }
 
-.process-step-title {
-    font-weight: 600;
-    color: var(--text-color);
-    margin-bottom: 0; /* No margin from title */
-    font-size: 1.15em; /* Slightly larger title */
-}
+/* --- SCROLLING ANIMATION --- */
+@keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.scrolling-wrapper { overflow: hidden; margin-top: 1.5rem; }
+.scrolling-wrapper:hover .scrolling-content { animation-play-state: paused; }
+.scrolling-content { display: flex; width: fit-content; animation: scroll 30s linear infinite; }
+.scrolling-item { margin-right: 1rem; flex-shrink: 0; }
+.scrolling-item.testimonial { background-color: var(--accent-secondary); border-radius: 8px; padding: 1.25rem; width: 250px; }
+.scrolling-item.testimonial h4 { margin: 0 0 0.5rem; font-weight: 600; white-space: nowrap; }
+.scrolling-item.testimonial p { font-size: 0.85rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.scrolling-item.testimonial .stars { font-size: 0.8rem; margin-bottom: 0.5rem; }
+.scrolling-item.featured-project { position: relative; width: 280px; height: 160px; border-radius: 8px; overflow: hidden; background-color: var(--accent-secondary); transition: transform 0.3s ease; }
+.scrolling-item.featured-project:hover { transform: scale(1.03); }
+.featured-project img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+.featured-project:hover img { transform: scale(1.1); }
+.project-overlay { position: absolute; bottom: 0; left: 0; right: 0; padding: 2rem 1rem 1rem; color: white; background: linear-gradient(to top, rgba(0,0,0,0.9) 10%, rgba(0,0,0,0.7) 50%, transparent 100%); }
+.project-overlay h4 { color: white; margin: 0; font-size: 1rem; text-shadow: 1px 1px 3px rgba(0,0,0,0.7); }
 
-.process-step-description {
-    font-size: 0.9em;
-    color: var(--secondary-text-color);
-    margin-left: 45px; /* Indent description to align with title */
-    margin-top: -5px; /* Pull up description slightly */
-}
+/* --- FOOTER --- */
+.main-footer { grid-column: 1 / -1; text-align: center; padding: 2rem 0 0 0; color: var(--text-secondary); display: flex; justify-content: center; align-items: center; gap: 0.5rem; }
+.main-footer .fa-heart { color: var(--accent-primary); }
 
-/* Connecting lines for work process */
-.process-list li::before {
-    content: '';
-    position: absolute;
-    left: 14px; /* Center with number */
-    top: 30px; /* Start below the number */
-    bottom: -15px; /* Extend below step */
-    width: 2px;
-    background-color: var(--border-color); /* Color of the line */
-    z-index: 0;
-}
+/* --- RESPONSIVE DESIGN --- */
+@media (max-width: 1200px) { .main-container { grid-template-columns: 300px 1fr; } .right-column { grid-column: 2 / 3; grid-row: 2 / 3; } }
+@media (max-width: 992px) { body { padding: 1rem; } .main-container { grid-template-columns: 1fr; } .right-column { grid-column: auto; grid-row: auto; } }
+@media (max-width: 768px) { .stats-grid { grid-template-columns: 1fr; } }
 
-.process-list li:last-child::before {
-    display: none; /* Hide line for the last item */
-}
-
-
-/* Testimonials */
-.testimonials {
-    margin-top: 30px; /* More space above testimonials */
-}
-.testimonials p {
-    font-style: italic;
-    margin-bottom: 15px;
-    border-left: 3px solid var(--accent-color);
-    padding-left: 15px; /* More padding */
-    font-size: 0.95em;
-    color: var(--secondary-text-color); /* Testimonial text color */
-}
-.testimonials p:first-child {
-    margin-top: 0;
-}
-
-/* Projects Summary Card */
-.projects-summary-card p {
-    margin-bottom: 25px; /* More space above button */
-}
-
-/* Media Queries for Responsiveness */
-@media (max-width: 992px) {
-    .container {
-        grid-template-columns: repeat(2, 1fr); /* Two columns on medium screens */
-    }
-    .work-process-card {
-        grid-column: 1 / 3; /* Spans both columns */
-        grid-row: auto; /* Allow auto placement */
-    }
-    .stats-contact-card {
-        grid-row: auto; /* Allow auto placement */
-    }
-}
-
-@media (max-width: 768px) {
-    .container {
-        grid-template-columns: 1fr; /* Single column on small screens */
-    }
-    .profile-card, .services-card, .projects-summary-card,
-    .skills-card, .stats-contact-card, .work-process-card {
-        grid-column: 1 / 2; /* All span full width */
-        grid-row: auto; /* Auto placement */
-    }
-    body {
-        padding: 20px;
-    }
-    .card {
-        padding: 25px;
-    }
-}
+/* --- SEPARATE PAGES (TESTIMONIALS, PROJECTS) --- */
+.page-container { max-width: 1200px; margin: 0 auto; }
+.page-header { text-align: center; margin-bottom: 3rem; }
+.page-header h1 { font-size: 3rem; font-weight: 700; margin-bottom: 0.5rem; }
+.page-header p { font-size: 1.1rem; margin-bottom: 2rem; }
+.project-card-link { display: block; text-decoration: none; }
+.projects-grid-display { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2.5rem; }
+.project-card { padding: 0; overflow: hidden; display: flex; flex-direction: column; height: 100%; }
+.project-card-content { padding: 1.5rem; display: flex; flex-direction: column; flex-grow: 1; }
+.project-card-content h3 { margin: 0.5rem 0; gap: 0; }
+.project-card-content .info-tags { margin-top: auto; padding-top: 1rem; }
+.project-card img { width: 100%; height: 200px; object-fit: cover; display: block; }
+.testimonials-grid-display { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2.5rem; }
+.testimonial-card-item { display: flex; flex-direction: column; }
+.testimonial-card-item .stars { margin-bottom: 1rem; font-size: 1.1rem; }
+.testimonial-card-item .quote { font-size: 1rem; font-style: italic; color: var(--text-primary); flex-grow: 1; margin-bottom: 1.5rem; }
+.testimonial-card-item h4 { margin: 0; font-weight: 600; }
+.testimonial-card-item .author-source { margin: 0; font-size: 0.9rem; }

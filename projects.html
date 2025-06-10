@@ -3,98 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Projects - Arctxrus</title>
+    <title>My Projects</title>
     <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        /* Specific styling for projects.html */
-        .page-header {
-            text-align: center;
-            padding: 30px 20px;
-            background-color: var(--card-bg);
-            border-bottom: 1px solid var(--border-color);
-            margin-bottom: 30px; /* Space below header */
-            box-shadow: 0 5px 15px var(--shadow-color);
-        }
-        .page-header h1 {
-            margin: 0;
-            font-size: 2.5em;
-            color: var(--text-color);
-        }
-        .page-header p {
-            margin-top: 10px;
-            font-size: 1.1em;
-            color: var(--secondary-text-color);
-        }
-        .projects-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px; /* Match main layout gap */
-            padding: 0 20px; /* Padding for the container */
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .project-card {
-            background-color: var(--card-bg);
-            border-radius: 12px;
-            padding: 25px; /* Match main card padding */
-            border: 1px solid var(--border-color);
-            box-shadow: 0 4px 10px var(--shadow-color);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between; /* Push button to bottom */
-        }
-        .project-card h3 {
-            color: var(--accent-color);
-            margin-top: 0;
-            margin-bottom: 10px;
-            font-size: 1.4em;
-        }
-        .project-card p {
-            font-size: 0.95em;
-            color: var(--secondary-text-color);
-            margin-bottom: 15px;
-        }
-        .project-card strong {
-            color: var(--text-color);
-        }
-        .project-card .btn {
-            margin-top: auto; /* Push button to bottom */
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            color: var(--secondary-text-color);
-            margin-top: 50px; /* More space above footer */
-            font-size: 0.9em;
-        }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <header class="page-header">
-        <h1><a href="index.html" style="color: var(--text-color); text-decoration: none;">Arctxrus's Projects</a></h1>
-        <p>A showcase of my work in development and design.</p>
-    </header>
 
-    <main class="projects-container">
-        <div class="project-card">
-            <h3>Roblox Aniverse Framework</h3>
-            <p>A comprehensive game framework focusing on advanced networking (bitpacking), rendering (frustum culling), and smooth path generation (splines). Built with Luau in Roblox Studio.</p>
-            <p><strong>Key Skills:</strong> Luau, Game Architecture, Network Optimization, Performance, UI Design.</p>
-            <a href="https://github.com/Arctxrus/Roblox-Aniverse-Framework" target="_blank" class="btn btn-primary"><i class="fab fa-github"></i> View Code</a>
-            </div>
+    <div class="page-container">
+        <header class="page-header">
+            <h1>My Projects</h1>
+            <p>Here you can find a collection of my public/open-source projects. Feel free to explore and check them out!</p>
+            <a href="index.html" class="btn btn-primary"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
+        </header>
 
-        <div class="project-card">
-            <h3>[Future Project Name]</h3>
-            <p>[Short description of your future project, skills used]</p>
-            <p><strong>Key Skills:</strong> [Skill 1], [Skill 2], [Skill 3]</p>
-            <a href="[Link to Future Project GitHub/Demo]" target="_blank" class="btn btn-secondary">Learn More</a>
-        </div>
-    </main>
+        <main class="projects-grid-display">
+            <a href="https://github.com/Arctxrus/Roblox-Aniverse-Framework" target="_blank" class="project-card-link" id="project-aniverse">
+                <div class="card project-card">
+                    <img src="assets/aniverse.png" alt="Aniverse Framework Project Image">
+                    <div class="project-card-content">
+                        <h3>Aniverse Framework</h3>
+                        <p>A modular and scalable game development framework for the Roblox platform, designed for efficiency and ease of use.</p>
+                        <div class="info-tags">
+                            <span>Roblox</span><span>Lua</span><span>Framework</span><span>Game Dev</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
 
-    <footer>
-        <p>&copy; 2025 Arctxrus. All rights reserved.</p>
-    </footer>
+            <a href="https://github.com/Arctxrus/KRK-endgame-multiclass-prediction" target="_blank" class="project-card-link" id="project-krk">
+                 <div class="card project-card">
+                    <img src="assets/KRKChessOutcomes.png" alt="KRK Chess Endgame Prediction Project Image">
+                     <div class="project-card-content">
+                        <h3>KRK Endgame Prediction</h3>
+                        <p>A machine learning model to predict the outcome of a King-Rook vs. King chess endgame based on piece positions.</p>
+                         <div class="info-tags">
+                            <span>Machine Learning</span><span>Python</span><span>Data Science</span><span>Chess</span>
+                        </div>
+                     </div>
+                </div>
+            </a>
+
+            <a href="https://github.com/Arctxrus/Roblox-Dynamic-Suspension" target="_blank" class="project-card-link" id="project-suspension">
+                <div class="card project-card">
+                   <img src="assets/RaycastSuspension.png" alt="Roblox Dynamic Suspension Project Image">
+                    <div class="project-card-content">
+                       <h3>Dynamic Raycast Suspension</h3>
+                       <p>A realistic and customizable vehicle suspension system for Roblox using raycasting physics.</p>
+                        <div class="info-tags">
+                           <span>Roblox</span><span>Lua</span><span>Physics</span><span>Raycasting</span>
+                       </div>
+                    </div>
+               </div>
+           </a>
+        </main>
+    </div>
+    
 </body>
 </html>

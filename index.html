@@ -3,108 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arctxrus's Portfolio</title>
+    <title>Arctxrus - Roblox Developer / UX Designer</title>
     <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <div class="container">
-        <div class="card profile-card">
-            <div class="profile-header">
-                <img src="https://avatars.githubusercontent.com/u/61715583?v=4" alt="Arctxrus's GitHub Profile" class="profile-pic">
-                <div class="profile-text">
-                    <p class="available-status">Available To Work</p>
-                    <h2>Arctxrus</h2>
-                    <p class="role">Roblox Developer | UX Designer</p>
+
+    <div class="main-container">
+        <aside class="left-column">
+            <div class="card profile-card">
+                <div class="profile-header">
+                    <img src="https://avatars.githubusercontent.com/u/61715583?v=4" alt="Arctxrus Avatar" class="avatar">
+                    <div class="profile-title">
+                        <h3>Arctxrus</h3>
+                        <p>Roblox Developer / UX Designer</p>
+                    </div>
+                </div>
+                <div class="status-tag"><i class="fa-solid fa-circle"></i> Available to Work</div>
+                <div class="info-tags">
+                    <span>English</span>
+                    <span>UTC+3</span>
+                    <span>Hydrated</span>
+                    <span>Freelancer</span>
+                </div>
+                <div class="profile-buttons">
+                    <a href="https://discord.com/users/718497211360608266" target="_blank" class="btn btn-primary"><i class="fa-brands fa-discord"></i> Hire Me</a>
+                    <a href="https://github.com/Arctxrus" target="_blank" class="btn btn-secondary"><i class="fa-brands fa-github"></i> GitHub</a>
                 </div>
             </div>
-            <div class="profile-details">
-                <p><i class="fas fa-globe"></i> English</p>
-                <p><i class="fas fa-map-marker-alt"></i> United Kingdom</p>
-                <p><i class="fas fa-mug-hot"></i> Hydrated</p>
-                <p><i class="fas fa-user-tie"></i> Freelancer</p>
-            </div>
-            <div class="profile-actions">
-                <a href="https://discordapp.com/users/718497211360608266" target="_blank" class="btn btn-primary"><i class="fab fa-discord"></i> Hire Me</a>
-                <a href="https://github.com/Arctxrus" target="_blank" class="btn btn-secondary"><i class="fab fa-github"></i> GitHub</a>
-            </div>
-        </div>
 
-        <div class="card services-card">
-            <h2><i class="fas fa-tools"></i> Services</h2>
-            <div class="services-grid">
-                <span class="service-item">Machine Learning Models</span>
-                <span class="service-item">Roblox Studio Scripts</span>
-                <span class="service-item">UI Design</span>
-                <span class="service-item">SEO Optimisation</span>
+            <div class="card">
+                <h3>Services</h3>
+                <div class="info-tags">
+                    <span>SE0</span>
+                    <span>HTML/CSS</span>
+                    <span>Python</span>
+                    <span>Lua</span>
+                    <span>UX Design</span>
+                </div>
             </div>
-        </div>
+        </aside>
+        
+        <main class="middle-column">
+            <div class="card tech-stack-card">
+                <h3><i class="fa-solid fa-layer-group"></i> My SKillset</h3>
+                <p>My skillsets available for projects</p>
+                <div class="tech-grid">
+                    <a href="#" class="tech-item"><span>Python</span><i class="fa-brands fa-python"></i></a>
+                    <a href="#" class="tech-item"><span>Lua</span><i class="fa-solid fa-file-code"></i></a>
+                    <a href="#" class="tech-item"><span>Illustrator</span><i class="fa-solid fa-pen-nib"></i></a>
+                    <a href="#" class="tech-item"><span>Photoshop</span><i class="fa-solid fa-wand-magic-sparkles"></i></a>
+                </div>
+            </div>
 
-        <div class="card projects-summary-card">
-            <h2><i class="fas fa-project-diagram"></i> Projects</h2>
-            <p>A collection of my work, ranging from complex game frameworks to UX case studies.</p>
-            <a href="projects.html" class="btn btn-primary">View Projects</a>
-        </div>
-
-        <div class="card stats-contact-card">
             <div class="stats-grid">
-                <div class="stat-item">
-                    <p class="stat-number">6+</p>
-                    <p class="stat-label">Projects</p>
-                </div>
-                <div class="stat-item">
-                    <p class="stat-number">3</p>
-                    <p class="stat-label">Clients</p>
-                </div>
-                <div class="stat-item">
-                    <p class="stat-number">5+</p>
-                    <p class="stat-label">Years of Experience</p>
-                </div>
-            </div>
+                <div class="card stat-card"><h3>6+</h3><p>Yrs Expertise</p></div>
+                <div class="card stat-card"><h3>7+</h3><p>Projects</p></div>
+                <div class="card stat-card"><h3>3+</h3><p>Clients</p></div>
             </div>
 
-        <div class="card work-process-card">
-            <h2><i class="fas fa-cogs"></i> Work Process</h2>
-            <ol class="process-list">
-                <li>
-                    <div class="process-step-header">
-                        <span class="process-step-number">1</span>
-                        <p class="process-step-title">Project Brief</p>
+            <div class="card">
+                <h3><i class="fa-solid fa-lightbulb"></i> Featured Projects</h3>
+                <div class="scrolling-wrapper">
+                    <div class="scrolling-content">
+                        <a href="projects.html#project-aniverse" class="scrolling-item featured-project">
+                            <img src="assets/aniverse.png" alt="Aniverse Framework">
+                            <div class="project-overlay"><h4>Aniverse Framework</h4></div>
+                        </a>
+                        <a href="projects.html#project-krk" class="scrolling-item featured-project">
+                            <img src="assets/KRKChessOutcomes.png" alt="KRK Endgame Prediction">
+                            <div class="project-overlay"><h4>KRK Endgame Prediction</h4></div>
+                        </a>
+                        <a href="projects.html#project-suspension" class="scrolling-item featured-project">
+                            <img src="assets/RaycastSuspension.png" alt="Dynamic Suspension">
+                            <div class="project-overlay"><h4>Dynamic Suspension</h4></div>
+                        </a>
+                        <a href="projects.html#project-aniverse" class="scrolling-item featured-project">
+                            <img src="assets/aniverse.png" alt="Aniverse Framework">
+                            <div class="project-overlay"><h4>Aniverse Framework</h4></div>
+                        </a>
+                        <a href="projects.html#project-krk" class="scrolling-item featured-project">
+                            <img src="assets/KRKChessOutcomes.png" alt="KRK Endgame Prediction">
+                            <div class="project-overlay"><h4>KRK Endgame Prediction</h4></div>
+                        </a>
+                        <a href="projects.html#project-suspension" class="scrolling-item featured-project">
+                            <img src="assets/RaycastSuspension.png" alt="Dynamic Suspension">
+                            <div class="project-overlay"><h4>Dynamic Suspension</h4></div>
+                        </a>
                     </div>
-                    <p class="process-step-description">We will discuss your project and its goals.</p>
-                </li>
-                <li>
-                    <div class="process-step-header">
-                        <span class="process-step-number">2</span>
-                        <p class="process-step-title">Design & Develop</p>
-                    </div>
-                    <p class="process-step-description">I will design and develop your solution according to your needs.</p>
-                </li>
-                <li>
-                    <div class="process-step-header">
-                        <span class="process-step-number">3</span>
-                        <p class="process-step-title">Testing & Review</p>
-                    </div>
-                    <p class="process-step-description">I will test the solution rigorously and make any necessary changes.</p>
-                </li>
-                <li>
-                    <div class="process-step-header">
-                        <span class="process-step-number">4</span>
-                        <p class="process-step-title">Launch</p>
-                    </div>
-                    <p class="process-step-description">I will deliver the source code and help you with the launch.</p>
-                </li>
-            </ol>
-            <h2><i class="fas fa-star"></i> Testimonials</h2>
-            <div class="testimonials">
-                <p>— *"[Humzinoo] - [Solo Dev]"*</p>
-                <p>"Delivered a well working Kart Controller!"</p>
-                <br>
-                <p>— *"[DemonMech] - [Solo Dev]"*</p>
-                <p>"Quickly made an RPG quest system, would recommend!"</p>
                 </div>
-        </div>
+                <a href="projects.html" class="btn btn-secondary full-width"><i class="fa-solid fa-arrow-up-right-from-square"></i> View All Projects</a>
+            </div>
+        </main>
+
+        <aside class="right-column">
+            <div class="card work-process-card">
+                <h3><i class="fa-solid fa-diagram-project"></i> Work Process</h3>
+                <p>The work process explained in 4 simple steps</p>
+                <ul class="work-steps">
+                    <li><span>#1</span><div><h4>Project Brief</h4><p>We will discuss your project and its goals.</p></div></li>
+                    <li><span>#2</span><div><h4>Design & Develop</h4><p>I will design and develop your request according to your needs.</p></div></li>
+                    <li><span>#3</span><div><h4>Testing & Review</h4><p>I will let you test the project and make any changes if needed.</p></div></li>
+                    <li><span>#4</span><div><h4>Launch</h4><p>I will give you the final source code.</p></div></li>
+                </ul>
+            </div>
+
+            <div class="card testimonials-card">
+                <h3><i class="fa-solid fa-comments"></i> Testimonials</h3>
+                <div class="scrolling-wrapper">
+                    <div class="scrolling-content">
+                        <div class="scrolling-item testimonial">
+                            <h4>Humzinoo <span class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span></h4>
+                            <p>"Created an efficient and well working kart..."</p>
+                        </div>
+                        <div class="scrolling-item testimonial">
+                            <h4>Harvvv <span class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span></h4>
+                            <p>"Made a raycast suspension system and..."</p>
+                        </div>
+                        <div class="scrolling-item testimonial">
+                            <h4>Humzinoo <span class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span></h4>
+                            <p>"Created an efficient and well working kart..."</p>
+                        </div>
+                        <div class="scrolling-item testimonial">
+                            <h4>Harvvv <span class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span></h4>
+                            <p>"Made a raycast suspension system and..."</p>
+                        </div>
+                    </div>
+                </div>
+                <a href="testimonials.html" class="btn btn-secondary full-width"><i class="fa-solid fa-comment-dots"></i> View All Testimonials</a>
+            </div>
+        </aside>
     </div>
+
 </body>
 </html>
